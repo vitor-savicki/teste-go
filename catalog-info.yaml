@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "teste"
+  description: "teste"
+  annotations:
+    github.com/project-slug: vitor-savicki/teste-go
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: dev-teste
+    backstage.io/kubernetes-id: "teste"
+    sonarqube.org/project-key: "teste"
+    grafana/tag-selector: "kubernetes"
+    prometheus.io/rule: container_cpu_usage_seconds_total{namespace="teste"}
+    prometheus.io/alert: all
+  links:
+    - url: https://teste.vitor-savicki.eti.br
+      title: Website
+      icon: Website
+    - url: https://grafana.vitor-savicki.eti.br/
+      title: Dashboard
+      icon: dashboard      
+    - url: https://alerts.vitor-savicki.eti.br/
+      title: Alerts
+      icon: alert 
+    - url: https://argocd.vitor-savicki.eti.br/applications/dev-teste?resource=
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - "backstage"
+    - "service"
+    - "production"
+spec:
+  system: "backstage"
+  type:  "service"
+  lifecycle: "production"
+  owner: "vitor-savicki"
